@@ -24,39 +24,52 @@
 Description here.
 -->
 
-## Install
+## 依赖说明
 
-```bash
-$ npm i egg-cxios --save
-```
+### 依赖的 egg 版本
 
-## Usage
+egg-cxios 版本 | egg 1.x
+--- | ---
+1.x | 😁
+0.x | ❌
+
+### 依赖的插件
+<!--
+
+如果有依赖其它插件，请在这里特别说明。如
+
+- security
+- multipart
+
+-->
+
+## 开启插件
 
 ```js
-// {app_root}/config/plugin.js
+// config/plugin.js
 exports.cxios = {
   enable: true,
   package: 'egg-cxios',
 };
 ```
 
-## Configuration
+## 使用场景
 
-```js
-// {app_root}/config/config.default.js
-exports.cxios = {
-};
-```
+- Why and What: 
+    提供类axios风格的请求方式， 基于curl开发
+- Tips: 仅用于本公司项目，如需在生产环境使用，请自行改造！！！
 
-see [config/config.default.js](config/config.default.js) for more detail.
+## 详细配置
 
-## Example
+请到 [config/config.default.js](config/config.default.js) 查看详细配置项说明。
 
-<!-- example here -->
+## 单元测试
 
-## Questions & Suggestions
+<!-- 描述如何在单元测试中使用此插件，例如 schedule 如何触发。无则省略。-->
 
-Please open an issue [here](https://github.com/eggjs/egg/issues).
+## 提问交流
+
+请到 [egg issues](https://github.com/eggjs/egg/issues) 异步交流。
 
 ## License
 

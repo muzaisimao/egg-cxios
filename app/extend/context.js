@@ -1,25 +1,32 @@
+const methods = ['get', 'post', 'put', 'delete'];
+const cxiosSymbol = Symbol.for('context#cxios');
+let cxios = {};
+
+let getCxios = (_this) => {
+    methods.forEach(name => {
+        cxios[name] = async (url, data, config = {}) => {
+            config.method = name;
+            return await _this[cxiosSymbol](url, data, config)
+        }
+    })
+    return cxios;
+}
+
 module.exports = {
-    baseURL: '',
-    async get(url, data, config) {
-        return await this.cxios(url, 'GET', data)
-    },
-    async post(url, data, config) {
-        return await this.cxios(url, 'POST', data)
-    },
-    async put(url, data, config) {
-        return await this.cxios(url, 'PUT', data)
-    },
-    async ['delete'](url, data, config) {
-        return await this.cxios(url, 'DELETE', data)
-    },
-    async cxios({url, methods, data}) {
+    async [cxiosSymbol] (url, data, config) {
         let path = this.app.config.cxios.baseURL + url;
-        this.logger.debug(`url: ${path}, methods: ${methods}, data: ${data}`)
+        // this.logger.debug(`cxios -- url: ${path}, data: ${data}, config: ${config}`)
+        console.log(`cxios -- url: ${path}, data: ${JSON.stringify(data)}, config: ${JSON.stringify(config)}`)
+        
         let res = await this.curl(path, {
-            methods,
-            dataType: 'json',
-            data
+            data,
+            ...config
         })
         return res;
-    } 
+    },
+    get cxios() {
+        let length = Object.keys(cxios).length;
+        if(length > 0) return cxios;
+        return getCxios(this);
+    }
 }

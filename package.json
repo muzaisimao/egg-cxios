@@ -1,6 +1,6 @@
 {
   "name": "egg-cxios",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "axios风格的egg请求插件, 基于curl封装(beta版)",
   "eggPlugin": {
     "name": "cxios"
@@ -31,7 +31,8 @@
     "lint": "eslint .",
     "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
     "pkgfiles": "egg-bin pkgfiles",
-    "autod": "autod"
+    "autod": "autod",
+    "mytest": "node test/mytest/test.js"
   },
   "files": [
     "app",

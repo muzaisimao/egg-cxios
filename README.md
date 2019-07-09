@@ -55,11 +55,17 @@ exports.cxios = {
 
 ## 使用场景
 
-- Why and What: 
-    提供类axios风格的请求方式， 基于curl开发
+- Why and What:
+
+    * 提供类axios风格的请求方式， 基于curl开发
+
 - Tips: 仅用于本公司项目，如需在生产环境使用，请自行改造！！！
 
 ## 详细配置
+
+配置优先级 :
+
+  - cxios[method](url, data, options) > config.cxios.options > httpclient.request
 
 请到 [config/config.default.js](config/config.default.js) 查看详细配置项说明。
 

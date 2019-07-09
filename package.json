@@ -1,14 +1,16 @@
 {
   "name": "egg-cxios",
-  "version": "0.0.3",
-  "description": "axios风格的egg请求插件, 基于curl封装(beta版)",
+  "version": "0.0.4",
+  "description": "axios风格的egg请求插件, 基于curl封装",
   "eggPlugin": {
     "name": "cxios"
   },
   "keywords": [
     "egg",
     "eggPlugin",
-    "egg-plugin"
+    "egg-curl",
+    "egg-axios",
+    "egg-cxios"
   ],
   "dependencies": {},
   "devDependencies": {

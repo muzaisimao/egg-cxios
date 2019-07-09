@@ -1,6 +1,6 @@
 {
   "name": "egg-cxios",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "axios风格的egg请求插件, 基于curl封装",
   "eggPlugin": {
     "name": "cxios"
@@ -33,24 +33,25 @@
     "lint": "eslint .",
     "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
     "pkgfiles": "egg-bin pkgfiles",
-    "autod": "autod",
-    "mytest": "node test/mytest/test.js"
+    "autod": "autod"
   },
   "files": [
     "app",
-    "config"
+    "config",
+    "app.js",
+    "lib"
   ],
   "ci": {
     "version": "8, 10"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eggjs/egg-cxios.git"
+    "url": "git+https://github.com/muzaisimao/egg-cxios.git"
   },
   "bugs": {
-    "url": "https://github.com/eggjs/egg/issues"
+    "url": "https://github.com/muzaisimao/egg-cxios/issues"
   },
-  "homepage": "https://github.com/eggjs/egg-cxios#readme",
+  "homepage": "https://github.com/muzaisimao/egg-cxios#readme",
   "author": "",
   "license": "MIT"
 }
